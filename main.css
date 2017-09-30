@@ -1,0 +1,99 @@
+='
+
+.qv-object-improvedTable td, .qv-object-improvedTable th{
+	border: none;
+}
+
+table.spMainTable{
+	border: 1px solid black;
+    margin-top: 5px;
+}
+
+
+table.spMainTable *{
+	font-size: 10pt;
+}
+
+table.spMainTable td{
+	text-align: right;
+    padding-right: 5px;
+}
+
+th.spTopLeftCorner{
+	border: 1px solid black;
+}
+
+/*tbody.spTbody{
+	border: 1px solid black;
+}
+*/
+
+th.spDimensionColumnHeader, th.spDimensionColumnHeaderRight{
+	border: 1px solid black;
+    background-color: #DCE6F1;
+    color: black;
+}
+
+table.spMainTable th.spMeasureColumnHeader, table.spMainTable th.spMeasureColumnHeaderRight{
+	background-color: #000066;
+    color: white;
+}
+
+td.spCellBody{
+	border: 1px solid #EEEEEE;
+}
+
+td.spCellBodyRight{
+	border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    border-left: 1px solid #EEEEEE;
+    border-right: inherit;
+}
+
+td.spCellBodyLast{
+	
+	/*
+    border-top: 1px solid #EEEEEE;
+	border-bottom: none;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    */
+}
+
+td.spCellBodyLastRight{
+	border-top: 1px solid #EEEEEE;
+    border-bottom: none;
+    border-left: 1px solid #EEEEEE;
+    border-right: inherit;
+}
+
+td.spColumnTotals{
+	padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid black;
+    font-weight: bold;
+    font-style:italic;
+}
+
+table.spMainTable td.spDimensionRowHeaderRight, table.spMainTable td.spDimensionRowHeader{
+	padding-left: 5px;
+}
+
+table.spMainTable td.spDimensionRowHeaderRight{
+	border-right: 1px solid black;
+    text-align: left;
+}
+
+table.spMainTable td.spDimensionRowHeader{
+    text-align: left;
+}
+
+.qv-object-content-container .qv-object-content table.spMainTable tbody tr.spTableRowOdd{
+	background-color: #E5E5E5;
+}
+
+table.spMainTable tbody tr.spTableRowEven{
+	background-color: #FFFFFF;
+}
+
+'

@@ -1,0 +1,184 @@
+.qv-object-improvedTable div.qv-object-content-container {
+	overflow: auto;
+}
+.qv-object-improvedTable td,
+.qv-object-improvedTable th {
+	border-top: 0px solid #fff;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	cursor: default;
+	font-size: 12px;
+}
+.qv-object-improvedTable td.numeric {
+	text-align: right;
+}
+.qv-object-improvedTable button {
+	width: 100%;
+}
+
+
+/* PLEASE NOTE: "sp_main_panel" is a placeholder which is replaced at runtime */
+.qv-object-superPivot td, .qv-object-superPivot div table.spMainTable th{
+	border: none;
+    vertical-align: middle;
+}
+
+div table.spMainTable{
+	/*border: 1px solid black;*/
+    margin-top: 5px;
+    border-collapse: collapse;
+    /*border-spacing: 2px;*/
+}
+
+
+div table.spMainTable *{
+	font-size: 10pt;
+}
+
+div table.spMainTable td span.spCellContainer{
+    margin-left: 0px;
+    margin-right: 3px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding: 0px 2px 0px 2px;
+	display: grid;
+	height: 100%;
+}
+
+div table.spMainTable th span.spCellContainer{
+    margin-left: 0px;
+    margin-right: 3px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding: 0px 2px 0px 2px;
+	display: grid;
+	height: 100%;
+}
+
+div table.spMainTable td span.spCellContainer{
+	/*border: 1px solid #EEEEEE;*/
+	text-align: right;
+}
+
+div table.spMainTable td span.spCellContent{
+	/*border: 1px solid #EEEEEE;*/
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+
+div table.spMainTable td{
+	height: 0;
+}
+
+
+div table.spMainTable tbody td span.spCellContainer{
+	text-align: right;
+}
+
+/*
+div table.spMainTable th.spTopLeftCorner{
+	border: 1px solid black;
+}
+*/
+
+div table.spMainTable th.spTopLeftCorner span.spCellContainer{
+	display:none;
+}
+
+div table.spMainTable th.spDimensionColumnHeader span.spCellContainer
+	, div table.spMainTable th.spDimensionColumnHeaderRight span.spCellContainer{
+	border: 1px solid black;
+    background-color: #DCE6F1;
+    color: black;
+}
+
+div table.spMainTable th.spMeasureColumnHeader span.spCellContainer
+	, div table.spMainTable th.spMeasureColumnHeaderRight span.spCellContainer{
+	background-color: #000066;
+    color: white;
+}
+
+div table.spMainTable td.spCellBodyLast{
+	
+	/*
+    border-top: 1px solid #EEEEEE;
+	border-bottom: none;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    */
+}
+
+div table.spMainTable td.spColumnTotals{
+	padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid black;
+    font-weight: bold;
+    font-style:italic;
+}
+
+div table.spMainTable td.spColumnTotals span.spCellContainer{
+	text-align: right;
+}
+
+div table.spMainTable tfoot td.spColumnTotalsHeader{
+	font-weight: bold;
+	font-style: italic;
+    border-top: 1px solid black;
+}
+
+
+div table.spMainTable td.spDimensionRowHeader span.spCellContainer
+, div table.spMainTable td.spDimensionRowHeaderRight span.spCellContainer{
+    margin-left: 0;
+	text-align: left;
+}
+
+/*
+div table.spMainTable tbody td:nth-child(5)
+	, div table.spMainTable tbody td:nth-child(6)
+	, div table.spMainTable tbody td:nth-child(10)
+	, div table.spMainTable tbody td:nth-child(11) {
+    font-weight: bold;
+}
+*/
+
+/*
+div table.spMainTable tbody td:nth-child(3)
+, div table.spMainTable tbody td:nth-child(5)
+, div table.spMainTable tbody td:nth-child(7)
+, div table.spMainTable tbody td:nth-child(9)
+{
+	border-right: 1px solid black;
+}
+*/
+
+.qv-object-content-container .qv-object-content div table.spMainTable tbody tr.spTableRowOdd td span.spCellContainer{
+	border: 1px solid #C1C1C1;
+}
+
+.qv-object-content-container .qv-object-content div table.spMainTable tbody tr.spTableRowOdd td span.spCellContainer{
+	background-color: #E5E5E5;
+}
+
+div table.spMainTable tbody tr.spTableRowEven td span.spCellContainer{
+	background-color: #FFFFFF;
+}
+
+div table.spMainTable tfoot tr.spFooterSpacer td{
+	padding-bottom: 4px;
+}
+
+
+/*
+div table.spMainTable tbody td:nth-child(5)
+	, div table.spMainTable tbody td:nth-child(6)
+	, div table.spMainTable tbody td:nth-child(10)
+	, div table.spMainTable tbody td:nth-child(11) {
+    font-weight: bold;
+}
+*/

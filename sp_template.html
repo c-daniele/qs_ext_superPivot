@@ -1,0 +1,90 @@
+<div style="height: 100%; position: relative; overflow: auto;" class="{{ settings.superPivotContainerClass }}">
+	<table class="spMainTable">
+		<thead>
+		<tr>
+		
+			<th class="spTopLeftCorner"
+				colspan="{{ vHeaderDimensions.length }}"
+				rowspan="{{ hHeaderDimensions.length }}"
+				width="{{ settings.leftColumnSize }}%">
+
+				<span ng-repeat="rowHeader in vHeaderDimensions track by $index" ng-init="spanIndex = $index" class="spCellContainer">
+					<span ng-if="spanIndex > 0"> /</span>
+					{{ rowHeader.qFallbackTitle }}
+				</span>
+
+			</th>
+			
+			<th ng-repeat="dimVal in horizontalHeaders[0] track by $index"
+				class="{{ ((dimVal.type == 'measure') ? 'spMeasureColumnHeader' : 'spDimensionColumnHeader') + (($index == horizontalHeaders[0].length-1) ? 'Right' : '' ) }}"
+				colspan="{{ dimVal.span }}">
+				<span class="spCellContainer">
+					<span class="spCellContent">{{ dimVal.qText }}</span>
+				</span>
+			</th>
+
+		</tr>
+		<tr ng-repeat="dimension in horizontalHeaders track by $index" ng-init="parentIndex = $index" ng-if="$index > 0">
+			
+			<th ng-repeat="dimVal in horizontalHeaders[parentIndex] track by $index" ng-init="childIndex = $index"
+				class="{{ ((dimVal.type == 'measure') ? 'spMeasureColumnHeader' : 'spDimensionColumnHeader') + (($index == horizontalHeaders[parentIndex].length-1) ? 'Right' : '' ) }}"
+				colspan="{{ dimVal.span }}">
+				<span class="spCellContainer">
+					<span class="spCellContent">{{ dimVal.qText }}</span>
+				</span>
+			</th>
+		</tr>
+		</thead>
+		<tbody class="spTbody">
+			
+			<tr ng-repeat="row in tableBody track by $index" ng-init="bodyRowIndex = $index"
+				class="{{ (bodyRowIndex%2 == 0) ? 'spTableRowEven' : 'spTableRowOdd' }}">
+			
+				<td cellspacing="0" ng-repeat="head in verticalHeaders[bodyRowIndex] track by $index"
+					class="{{ ((head.type == 'measure') ? 'spMeasureRowHeader' : 'spDimensionRowHeader') + (($index == verticalHeaders[bodyRowIndex].length-1) ? 'Right' : '' ) }}"
+					rowspan="{{ head.span }}">
+					<span class="spCellContainer">
+						<span class="spCellContent">{{ head.qText }}</span>
+					</span>
+				</td>
+				
+				<td cellspacing="0" ng-repeat="cellIndex in range(0, tableBodyCols-1) track by $index"
+					class="spCellBody{{ ((bodyRowIndex == tableBody.length-1) ? 'Last' : '') + (($index == tableBodyCols-1) ? 'Right' : '') }}"
+					width="auto">
+					<span class="spCellContainer">
+						<img src="/Extensions/superPivot/smiley_green.png" ng-if="row.columns[cellIndex].qText == ':)'" width="20" height="20" />
+						<img src="/Extensions/superPivot/smiley_yellow.png" ng-if="row.columns[cellIndex].qText == ':|'" width="20" height="20" />
+						<img src="/Extensions/superPivot/smiley_red.png" ng-if="row.columns[cellIndex].qText == ':('" width="20" height="20" />
+						<span class="spCellContent" ng-if="row.columns[cellIndex].qText != ':)' && row.columns[cellIndex].qText != ':|' && row.columns[cellIndex].qText != ':('">{{ (row.columns[cellIndex] == undefined) ? '-' : row.columns[cellIndex].qText }}</span>
+					</span>
+				</td>
+				
+			</tr>
+		</tbody>
+		<tfoot>
+			
+			<tr class="spFooterSpacer">
+				<td colspan="{{vHeaderDimensions.length + columnTotals.length }}"></td>
+			</tr>
+			
+			<tr ng-if="settings.showColumnTotals">
+			
+				<td class="spColumnTotalsHeader" colspan="{{ vHeaderDimensions.length }}">
+					<span class="spCellContainer">
+						<span class="spCellContent">TOT</span>
+					</span>
+				</td>
+				
+				<td class="spColumnTotals"
+					ng-repeat="tot in columnTotals track by $index">
+					<span class="spCellContainer">
+						<span class="spCellContent">{{ tot.qText }}</span>
+					</span>
+				</td>
+				
+			</tr>
+			
+		</tfoot>
+	</table>
+	<button ng-if="table.rowCount>table.rows.length" qva-activate="table.getMoreData()" class="lui-button more">More...</button>
+</div>
